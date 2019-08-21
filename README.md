@@ -32,7 +32,7 @@ docker run -it \
       avpnusr/torbrowser:latest
 ```
    
-If you close the browser windows, you can restart the container any time with   
+If you close the browser window, you can restart the container any time with:     
 ```
 docker start torbrowser
 ```
