@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
         && apt-get purge --auto-remove -y openssl dirmngr gpg wget curl xz-utils \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/* ~/.gnupg \
-        && groupadd -r tor && useradd -r -m -g tor -G audio,video tor \
+        && groupadd -g 1000 -r tor && useradd -r -m -u 1000 -g tor -G audio,video tor \
         && mkdir /data && chown tor:tor /opt/tor-browser_en-US /data && cd /opt/tor-browser_en-US && chown -R tor:tor *
 
 # Run TorBrowser as non privileged user
@@ -36,4 +36,3 @@ USER tor
 
 # Autorun TorBrowser
 ENTRYPOINT [ "/opt/tor-browser_en-US/Browser/start-tor-browser" ]
-# CMD [ "-profile", "/data" ]
