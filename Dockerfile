@@ -15,11 +15,11 @@ RUN apt-get update && apt-get install -y \
         libxt6 \
         --no-install-recommends \
         && echo "94.130.28.204 dist.torproject.org" >> /etc/hosts \
-        && LATESTASC=$(curl -s  https://www.torproject.org/download/ | grep -Eo -m1 "(http|https)://[a-zA-Z0-9./?=_-]*linux64.*.asc") \
-        && LATESTXZ=$(curl -s  https://www.torproject.org/download/ | grep -Eo -m1 "(http|https)://[a-zA-Z0-9./?=_-]*linux64.*.xz") \
+        && LATESTASC=$(curl -s  https://www.torproject.org/download/ | grep -Eo -m1 "/[a-zA-Z0-9./?=_-]*linux64.*.asc") \
+        && LATESTXZ=$(curl -s  https://www.torproject.org/download/ | grep -Eo -m1 "/[a-zA-Z0-9./?=_-]*linux64.*.xz") \
         && echo "### Downloading Tor-Browser ###" \
-        && wget -q -O /opt/tor.tar.xz "$LATESTXZ" \
-        && wget -q -O /opt/tor.tar.xz.asc "$LATESTASC" \
+        && wget -q -O /opt/tor.tar.xz "https://www.torproject.org/$LATESTXZ" \
+        && wget -q -O /opt/tor.tar.xz.asc "https://www.torproject.org/$LATESTASC" \
         && echo "### Verifying signature of downloaded TorBrowser ###" \
         && gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org \
         && gpg --output /opt/tor.keyring --export 0xEF6E286DDA85EA2A4BA7DE684E2C6E8793298290 \
