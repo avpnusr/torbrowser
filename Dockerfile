@@ -14,7 +14,6 @@ RUN apt-get update && apt-get install -y \
         libdbus-glib-1-2 \
         libxt6 \
         --no-install-recommends \
-        && echo "94.130.28.204 dist.torproject.org" >> /etc/hosts \
         && LATESTASC=$(curl -s  https://www.torproject.org/download/ | grep -Eo -m1 "/[a-zA-Z0-9./?=_-]*linux64.*.asc") \
         && LATESTXZ=$(curl -s  https://www.torproject.org/download/ | grep -Eo -m1 "/[a-zA-Z0-9./?=_-]*linux64.*.xz") \
         && echo "### Downloading Tor-Browser ###" \
