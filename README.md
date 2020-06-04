@@ -13,7 +13,7 @@ Versions in the latest image
 
 Start your container
 -----
-Use the below start sequence to get a running TorBrowser displaying ob your host X11 server.   
+Use the below start-sequence to get a running TorBrowser displaying ob your host X11 server.   
 Be aware, that this was of accessing the X11 server is not the safest, you will find more secure methods online.  
 The consistent profile is quite a pain, but in most cases you want anonymity and nothing stored on the host!
 
