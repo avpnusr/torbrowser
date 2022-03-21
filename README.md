@@ -8,7 +8,7 @@ Container is built for amd64, arm and arm64.
 
 Versions in the latest image
 -----
-- [TorBrowser](https://www.torproject.org/ "TOR Project Homepage") Version: 11.0.6
+- [TorBrowser](https://www.torproject.org/ "TOR Project Homepage") Version: 11.0.9
 - [Debian Base Image](https://hub.docker.com/_/debian "Debian Docker Repo") Version: stretch
 
 Start your container
