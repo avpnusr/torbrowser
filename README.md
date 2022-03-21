@@ -22,7 +22,7 @@ docker run -it \
       --memory 1gb \
       -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
       -e DISPLAY=$DISPLAY \ # to display on your host X11
-      -v $HOME/Downloads/torbrowser:/tmp/Downloads \ # to access your downloads on host
+      -v $HOME/Downloads/torbrowser:/tmp/Downloads \ # to access your downloads on the host
       -v $HOME/.config/tor:/opt/tor-browser_en-US/Browser/TorBrowser/Data/Browser/profile.default \ # if you want consistent profile
       --device /dev/snd \ # to have sound output
       --device /dev/dri/card0 \ # to use graphics card acceleration (if needed)
