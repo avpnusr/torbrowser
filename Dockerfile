@@ -1,4 +1,4 @@
-FROM debian:9-slim
+FROM debian:12-slim
 LABEL maintainer "avpnusr"
 
 # Install TorBrowser
@@ -17,8 +17,6 @@ RUN     echo "deb http://deb.debian.org/debian stretch main contrib non-free" > 
         libgtk-3-0 \
         libdbus-glib-1-2 \
         libxt6 \
-        ttf-mscorefonts-installer \
-        ttf-liberation \
         && LATESTASC=$(curl -s -N https://www.torproject.org/download/ | grep -Eo -m1 "/[a-zA-Z0-9./?=_-]*linux64.*.asc") \
         && LATESTXZ=$(curl -s -N https://www.torproject.org/download/ | grep -Eo -m1 "/[a-zA-Z0-9./?=_-]*linux64.*.xz") \
         && echo "### Downloading Tor-Browser ###" \
